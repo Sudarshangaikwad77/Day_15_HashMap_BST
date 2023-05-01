@@ -3,7 +3,6 @@ package com.bl.hashTable;
 import java.util.LinkedList;
 
 public class MyHashTable {
-
     LinkedList<MyMapNode>[] buckets;
 
     public MyHashTable() {
@@ -44,3 +43,5 @@ public class MyHashTable {
         return index;
     }
 }
+
+
