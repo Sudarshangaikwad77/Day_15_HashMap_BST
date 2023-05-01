@@ -3,6 +3,7 @@ package com.bl.hashTable;
 import java.util.LinkedList;
 
 public class MyHashTable {
+
     LinkedList<MyMapNode>[] buckets;
 
     public MyHashTable() {
@@ -22,7 +23,6 @@ public class MyHashTable {
                 return;
             }
         }
-
         bucket.add(new MyMapNode(key, 1));
     }
 
@@ -35,12 +35,12 @@ public class MyHashTable {
                 return node.value;
             }
         }
-
         return 0;
     }
 
     private int getIndex(String key) {
-        char firstChar = key.toLowerCase().charAt(0);
-        return firstChar - 'a';
+        int hashCode = key.toLowerCase().hashCode();
+        int index = Math.abs(hashCode % 26);
+        return index;
     }
 }
